@@ -157,11 +157,11 @@ function generate() {
   function climate() {
     let num = Math.floor(Math.random() * (6 - 1) + 1);
     const climateTable = {
-      1: "cold. The air is frigid and inhospitable.",
-      2: "cool. Its landscape is covered in a layer of snow.",
-      3: "mild. Its weather is temperate and landscape lush.",
-      4: "warm. Its landscape is dominated by desert and savannah.",
-      5: "hot. The planet bakes in extreme heat."
+      1: "cold, the air is frigid and inhospitable.",
+      2: "cool, the landscape is covered in a layer of snow.",
+      3: "mild, the weather is temperate and landscape lush.",
+      4: "warm, the landscape is dominated by desert and savannah.",
+      5: "hot, the planet bakes in extreme heat."
     };
     document.getElementById("temp").innerHTML =
       name + "'s climate is " + climateTable[num];
@@ -219,7 +219,7 @@ function generate() {
     if (aqua == 1) {
       document.getElementById("flora").innerHTML =
         name + " is too cold for flora.";
-    } else if (aqua == 3) {
+    } else if (aqua == 2) {
       document.getElementById("flora").innerHTML =
         name +
         " has flora adapted to its cold climate. Such as its " +
