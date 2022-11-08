@@ -194,8 +194,7 @@ function generate() {
       4: " has sparse fresh water.",
       5: " is too hot for liquid water."
     };
-    document.getElementById("water").innerHTML =
-      name + " has" + waterTable[temp];
+    document.getElementById("water").innerHTML = name + waterTable[temp];
     return temp;
   }
 
@@ -237,16 +236,29 @@ function generate() {
     const extraTable = {
       1: " have medicinal properties.",
       2: " are poisonous to humans.",
-      3: " can be burned as fuel.",
+      3: " can be burned as fuel, producing " + colorTable[numC] + " flames.",
       4: " are edible and taste delicious.",
-      5: " are edible and taste disgusting.",
+      5: " are edible but taste disgusting.",
       6: " can be used to make a " + colorTable[numC] + " dye.",
       7: " are hallucinogenic."
+    };
+    let numBI = Math.floor(Math.random() * (4 - 1) + 1);
+    const barrenIceTable = {
+      1: " Tall shards of ice dominate the landscape.",
+      2: " Constant snowstorms roar.",
+      3: " Beautiful snowflakes gliter in the skies."
+    };
+    let numBH = Math.floor(Math.random() * (5 - 1) + 1);
+    const barrenHotTable = {
+      1: " The sky is cloudless and empty.",
+      2: " The atmosphere is thick and opressive.",
+      3: " Sandstorms rage endlessly.",
+      4: " Dry riverbeds cover the planet."
     };
     //can't get lookup table to work here but this could be neater
     if (aqua == 1) {
       document.getElementById("flora").innerHTML =
-        name + " is too cold for flora. Nothing lives here.";
+        name + " is too cold for flora." + barrenIceTable[numBI];
     } else if (aqua == 2) {
       document.getElementById("flora").innerHTML =
         name +
@@ -282,27 +294,29 @@ function generate() {
         extraTable[numE];
     } else if (aqua == 5) {
       document.getElementById("flora").innerHTML =
-        name + " is too hot for flora. Nothing lives here.";
+        name + " is too hot for flora." + barrenHotTable[numBH];
     }
   }
   plants();
+  //add animals here.
+  //prey
+  //predator
+
   //extra details
   function extra() {
-    let num = Math.floor(Math.random() * (8 - 1) + 1);
+    let num = Math.floor(Math.random() * (9 - 1) + 1);
     const extraTable = {
       1: "are the ruins of a pre-space civilisation.",
-      2: "are tall spires made of an unknown metal.",
+      2: "are tall spires made of an unknown metal. They hum ominously.",
       3: "are many craters from past meteorite impacts.",
-      4: "are volcanos that periodically erupt.",
+      4: "are active volcanos.",
       5: "is a crashed space freighter. Its distress signal faded away long ago.",
       6: "are deep caves and caverns.",
-      7: "is rumoured to be the treasure hoard of a fearsome space pirate."
+      7: "is rumoured to be the treasure hoard of a fearsome space pirate.",
+      8: "are the ruins of a space-fairing  civilisation."
     };
     document.getElementById("extra").innerHTML =
       "On " + name + " there " + extraTable[num];
   }
   extra();
-}
-function gen() {
-  generate();
 }
