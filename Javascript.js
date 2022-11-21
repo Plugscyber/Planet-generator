@@ -192,7 +192,7 @@ function generate() {
       2: " has glaciers that feed its rivers.",
       3: " has lakes, rivers and oceans.",
       4: " has sparse fresh water.",
-      5: " is too hot for liquid water."
+      5: " is so hot liquid water evaporates."
     };
     document.getElementById("water").innerHTML = name + waterTable[temp];
     return temp;
@@ -246,14 +246,15 @@ function generate() {
     const barrenIceTable = {
       1: " Tall shards of ice dominate the landscape.",
       2: " Constant snowstorms roar.",
-      3: " Beautiful snowflakes gliter in the skies."
+      3: " Beautiful snowflakes gliter in the skies.",
+      4: " Craggy mountains tower over the land."
     };
     let numBH = Math.floor(Math.random() * (5 - 1) + 1);
     const barrenHotTable = {
       1: " The sky is cloudless and empty.",
-      2: " The atmosphere is thick and opressive.",
+      2: " The atmosphere is thick and traps the heat.",
       3: " Sandstorms rage endlessly.",
-      4: " Dry riverbeds cover the planet."
+      4: " Dry riverbeds and lakes are a common feature."
     };
     //can't get lookup table to work here but this could be neater
     if (aqua == 1) {
