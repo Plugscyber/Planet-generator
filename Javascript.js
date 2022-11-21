@@ -173,11 +173,11 @@ function generate() {
   function climate() {
     let num = Math.floor(Math.random() * (6 - 1) + 1);
     const climateTable = {
-      1: "cold; the air is frigid and inhospitable.",
-      2: "cool; the landscape is covered in a layer of snow.",
-      3: "mild; the weather is temperate and landscape lush.",
-      4: "warm; the landscape is dominated by desert and savannah.",
-      5: "hot; the planet bakes in extreme heat."
+      1: "cold, the air is frigid and inhospitable.",
+      2: "cool, the landscape is covered in a layer of snow.",
+      3: "mild, the weather is temperate and landscape lush.",
+      4: "warm, the landscape is dominated by desert and savannah.",
+      5: "hot, the planet bakes in extreme heat."
     };
     document.getElementById("temp").innerHTML =
       name + "'s climate is " + climateTable[num];
